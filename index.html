@@ -56,14 +56,19 @@
     </div>
 
     <script>
-        document.getElementById('coinForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission for now
-            const name = document.getElementById('coinName').value;
-            const symbol = document.getElementById('coinSymbol').value;
-            const supply = document.getElementById('initialSupply').value;
-            document.getElementById('output').innerText = `You want to create a coin named ${name} with symbol ${symbol} and initial supply ${supply}.`;
-            // In the future, this is where we'll send data to the backend
-        });
-    </script>
+    document.getElementById('coinForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const name = document.getElementById('coinName').value;
+        const symbol = document.getElementById('coinSymbol').value;
+        const supply = document.getElementById('initialSupply').value;
+
+        const outputDiv = document.getElementById('output');
+        outputDiv.innerText = `Creating coin "<span class="math-inline">\{name\}" with symbol "</span>{symbol}" and initial supply of ${supply}... (This is a simulation)`;
+
+        // In the future, this is where we'll send data to the backend
+        // and interact with the blockchain.
+    });
+</script>
 </body>
 </html>
